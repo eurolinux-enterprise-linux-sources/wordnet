@@ -1,6 +1,6 @@
 Name:           wordnet
 Version:        3.0
-Release:        13%{?dist}
+Release:        14%{?dist}
 Summary:        A lexical database for the English language
 
 Group:          Applications/Text
@@ -76,6 +76,8 @@ make install DESTDIR=$RPM_BUILD_ROOT
 rm -f  $RPM_BUILD_ROOT%{_libdir}/libWN.la
 # Remove duplicate copies of docs installed by make install
 rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}/doc
+# Remove useless Makefiles installed by %%doc
+rm -rf doc/{html,ps,pdf}/Makefile*
 
 
 %clean
@@ -105,6 +107,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Mar 05 2012 Petr Pisar <ppisar@redhat.com> - 3.0-14
+- Remove Makefiles from documentation clashing in multiarch installation
+  (bug #658043).
+
 * Fri Apr 30 2010 Petr Pisar <ppisar@redhat.com> - 3.0-13
 - Add GPLv2+ license tag because wishwn(1) manual page is GPLv2+-licensed.
 
