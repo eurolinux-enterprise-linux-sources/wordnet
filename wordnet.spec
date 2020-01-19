@@ -1,6 +1,6 @@
 Name:           wordnet
 Version:        3.0
-Release:        19%{?dist}
+Release:        21%{?dist}
 Summary:        A lexical database for the English language
 
 Group:          Applications/Text
@@ -131,6 +131,12 @@ rm -rf doc/{html,ps,pdf}/Makefile*
 
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 3.0-21
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 3.0-20
+- Mass rebuild 2013-12-27
+
 * Fri Feb 15 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.0-19
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
